@@ -46,6 +46,11 @@ body:has(.season-tab :checked) .week-view, body:not(:has(.season-tab :checked)) 
 .show label { padding: 2px 10px; border-radius: 6px; background: #1d2027; color: #9aa4b2; cursor: pointer; }
 .show label:has(:checked) { background: #e3b341; color: #15171c; font-weight: 600; }
 .cat-wrap:has(.rank-opt :checked) .v, .cat-wrap:not(:has(.rank-opt :checked)) .r { display: none; }
+/* desktop: the switch floats in the gap above the table, so the table lines up with its neighbours */
+@media (min-width: 701px) {
+  .cat-wrap { position: relative; }
+  .show { position: absolute; right: 0; bottom: calc(100% + 2px); margin: 0; }
+}
 /* phones: each player row becomes a card (name + team abbrev + game + G + z, then one stat row) */
 @media (max-width: 700px) {
   .players, .players tbody { display: block; width: auto; }
